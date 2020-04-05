@@ -15,12 +15,12 @@ import ResultRefinement as rr
 #Initilize detector
 print('Parse detector result ...')
 dayNightDetector = DayNightDetector()
-detectorDay = DetectorDay(Config.data_path + '/result_8_3_3_clas.txt', Config.data_path + '/result_8_3_3_nclas.txt')
-detectorNight = DetectorNight(Config.data_path + '/extracted-bboxes-dark-videos')
+detectorDay = DetectorDay(Config.data_path + '\\result_8_3_3_clas.txt', Config.data_path + '\\result_8_3_3_nclas.txt')
+detectorNight = DetectorNight(Config.data_path + '\\extracted-bboxes-dark-videos')
 #evalFunc = Evaluation(Config.data_path + '/test_groundtruth.txt')
 anomalyDetector = AnomalyDetector()
-stableList = StableFrameList(Config.data_path + '/unchanged_scene_periods.json')
-maskList = MaskList(Config.data_path + '/masks_refine_v3')
+stableList = StableFrameList(Config.data_path + '\\unchanged_scene_periods.json')
+maskList = MaskList(Config.data_path + '\\masks_refine_v3')
 
 for video_id in range(1, 101):
     print("Processing video ", video_id)

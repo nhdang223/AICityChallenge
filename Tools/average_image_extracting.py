@@ -3,11 +3,13 @@ import imageio
 import os
 import matplotlib.pyplot as plt
 import glob
-
+from pathlib import Path
 
 alpha = 0.01
 
-data_path = '../data/aic19-track3-test-data/'
+data_path = 'F:\\Workspace\\aicity2020\\AIC20_track4\\test-data'
+output_path = Path(r"F:\Workspace\tuanbi97\AICityChallenge\average_image")
+
 for vid_id in range(1,101):
     fname = os.path.join(data_path, '%d.mp4' %vid_id)
     reader = imageio.get_reader(fname, 'ffmpeg')
@@ -29,7 +31,9 @@ for vid_id in range(1,101):
         average = (1 - alpha)*average + alpha*frame
         if (i % 30 == 0):
             second = i // 30
-            imageio.imwrite('../data/average_image/%d/average%d.jpg' %(vid_id, second), average.astype(np.uint8))
+            path = output_path / str(vid_id)
+            path.mkdir(parents=True, exist_ok=True)
+            imageio.imwrite(path / "average{}.jpg".format(second), average.astype(np.uint8))
 
 
     
