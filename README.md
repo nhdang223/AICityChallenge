@@ -52,3 +52,11 @@ FRCNN Trained on dashboard camera dataset: We are not allowed to publish this so
 
 FRCNN's Jia Yi Wei: [2018AICITY_MCPRL](https://github.com/NVIDIAAICITYCHALLENGE/2018AICITY_MCPRL)
 
+**Backward vehicle tracking**
+First, extract frames from the videos and put them in folders: frames/<video_id>.
+
+To track, run `trace_back.py`. Videos to track are in `trace_input.txt`. 
+
+Values are tab separated, with each line containing video id, upper left and lower right corners of bounding box, time to start tracking (in seconds), and offset of frames (in seconds, 0 if frames are extracted from the beginning of the video).
+
+Output are pairs of video id and frame of starting of accident.
