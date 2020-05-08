@@ -1,7 +1,7 @@
 **Abnormality Detection with Multi-Adaptive Vehicle Detectors
 for Traffic Video Analysis**
 
-This is the source code for Track 3 Ai City Challenge 2019.
+This is the source code for Track 3 AI City Challenge 2019, with updates for Track 4 of AI City Challenge 2020.
 
 Extract Road Mask: `Tools/mask_creating.py`
 
